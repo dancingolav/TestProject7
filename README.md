@@ -1,6 +1,6 @@
 # TestProject
 
-Тесты: Login и RadioButtons с использованием PageObject Pattern
+Тесты: Login (EpamTest31v) и Radio Buttons (EpamTest31v) с использованием PageObject Pattern
 
 Test RadioButtons считается пройденным, если в окне логов отображаются  правильные названия radio buttons.
 
