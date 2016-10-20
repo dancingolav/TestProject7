@@ -27,6 +27,7 @@
         <parameter name="pathToDriver"  value="D:\PersonalDrivers\chromedriver.exe"/>
         <classes>
             <class name= "org.epam.testing.EpamTest31v" />
+            <class name= "org.epam.testing.EpamTest32v" />
         </classes>
     </test>
 

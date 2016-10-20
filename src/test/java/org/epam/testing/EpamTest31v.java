@@ -21,9 +21,9 @@ import static org.testng.Assert.assertTrue;
  */
 public class EpamTest31v {
 
-
-    private WebDriver myPersonalDriver;
-    private EpamLoginPage epamLoginPage;
+    //it is static & public. It is for all. Love it or leave it.
+    public static  WebDriver myPersonalDriver;
+    public static EpamLoginPage epamLoginPage;
 
 
     /*
@@ -81,8 +81,9 @@ public class EpamTest31v {
 
 
         System.out.println(browser + " " + pathToDriver);
-        epamLoginPage = new EpamLoginPage(myPersonalDriver);
 
+        //At "very beginning" we open fist page. This is really door to eternity
+        epamLoginPage = new EpamLoginPage(myPersonalDriver);
         epamLoginPage.open();
 
     }

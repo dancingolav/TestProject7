@@ -97,5 +97,10 @@ public boolean isLoginSucceed(){
     return (driverHere.findElements(logoutButton)).size() != 0;
 }
 
+public boolean isLoggedIn(){
+    return isLoginSucceed();
+}
+
+
 }
 
