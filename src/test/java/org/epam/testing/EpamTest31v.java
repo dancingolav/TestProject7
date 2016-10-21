@@ -82,7 +82,7 @@ public class EpamTest31v {
 
         System.out.println(browser + " " + pathToDriver);
 
-        //At "very beginning" we open fist page. This is really door to eternity
+        //At a "very beginning" we open fist page. This is really door to eternity
         epamLoginPage = new EpamLoginPage(myPersonalDriver);
         epamLoginPage.open();
 
@@ -101,7 +101,7 @@ public class EpamTest31v {
         }
 
 
-        //if we've opened logout menu (look at previous code) we have to log out since we were in "logged in" state
+        //if we've opened logout menu (look at the code above) we have to log out since we were in "logged in" state
         //and have not input fields for our data
         if  (epamLoginPage.isLogoutMenuOpen()) {
               epamLoginPage.logout();
