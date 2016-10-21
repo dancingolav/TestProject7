@@ -95,14 +95,14 @@ public class EpamTest31v {
 
 
 
-        //if login-logout menu is closed we will open it
+        //if login or logout menu is closed we will open it
         if (!(epamLoginPage.isLoginOrLogoutMenuOpen())) {
               epamLoginPage.openLoginOrLogoutMenu();
         }
 
 
         //if we've opened logout menu (look at the code above) we have to log out since we were in "logged in" state
-        //and have not input fields for our data
+        //and have not input fields for our data to log in
         if  (epamLoginPage.isLogoutMenuOpen()) {
               epamLoginPage.logout();
          }
