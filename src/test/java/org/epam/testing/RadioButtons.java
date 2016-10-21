@@ -25,6 +25,16 @@ public class RadioButtons {
 
     public void clickRadioButton(String buttonName) {
 
+
+        //Why does it not work? It looks like e.getText().contains(buttonName) does not return what i heed
+        //Why? Who know?
+
+        /*Ask me. And I will laugh quietly.
+          Give me any question. You will not have my answer.
+          My name is just time worn Hieroglyph.
+          My clothes are patched with the wind.
+        */
+
        /* for (WebElement e: elementS) {
             System.out.println(e.getText());
 
@@ -34,6 +44,7 @@ public class RadioButtons {
              }
         }*/
 
+        //This works.
         driverHere.findElement(By.xpath(radioName+"'"+buttonName+"']")).click();
 
     }
