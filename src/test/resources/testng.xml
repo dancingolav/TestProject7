@@ -2,7 +2,7 @@
 
 <suite name="TestAll">
 
-    <test name="MyTestProject3">
+    <test name="LoginTest">
         <!--"browser", "pathToDriver" Use one of parameters' set ro run
         test with browser of your choice. Don't forgot to make change to proper driver's directory!
              ===============================================================================
@@ -27,9 +27,16 @@
         <parameter name="pathToDriver"  value="D:\PersonalDrivers\chromedriver.exe"/>
         <classes>
             <class name= "org.epam.testing.EpamTest31v" />
+        </classes>
+    </test>
+    <test name="DifferentElementsPage">
+        <classes>
             <class name= "org.epam.testing.EpamTest32v" />
         </classes>
     </test>
+
+
+
 
     <!-- You can run one more test or the same test with different browser
     <test name="TryingEpamSiteSecondTest2">

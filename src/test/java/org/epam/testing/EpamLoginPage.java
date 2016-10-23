@@ -23,36 +23,43 @@ public class EpamLoginPage {
     //Logout Menu
     private By logoutButton = By.xpath("//div[@class='logout']/button[@class='uui-button dark-blue btn-login'][@type='submit']/span[text()='Logout']");
 
-    //Login is failed
+    //We will use the message to check that login is failed
     private By loginFailed = By.xpath("//span[@class='login-txt'][text()='* Login Faild']");
 
-    //Login is succeed
 
-    //We will use logoutButton to check
-    //Also we can check access to resources that successful login gives us but not now :)
+    //If login is succeed....
+    //We will use a logoutButton to check whether we are in "login state"
+    //Also we can check an access to resources that successful login gives us but not now :)
 
     private By buttonToOpenOrCloseMenu = By.xpath("//a[@class='dropdown-toggle'][@href='#']");
 
     private String epamLoginPageUrl = "https://jdi-framework.github.io/tests/";
 
-
-
-
     private WebDriver driverHere;
 
+    //Two constructors
     public EpamLoginPage( final WebDriver driver ) {
         driverHere = driver;
 
     }
+    public EpamLoginPage (final WebDriver driver, final String pageUrl) {
+        driverHere = driver;
+        epamLoginPageUrl = pageUrl;
+    };
 
-public void open() {
 
-    driverHere.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+
+    public void open() {
+
+    driverHere.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
     driverHere.get(epamLoginPageUrl);
     driverHere.manage().window().maximize();
 
 }
 
+    public void close () {
+        driverHere.close();
+    }
 
 public void login(final String accountName, final String accountPwd) {
 

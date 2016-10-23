@@ -1,5 +1,6 @@
 package org.epam.testing;
 
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -16,11 +17,14 @@ public class EpamTest32v {
 
 private EpamDifferentElementsPage differentElements;
 private RadioButtons radioButtons;
-private ArrayList<String> buttonsToCheck = new ArrayList<String>( Arrays.asList(new String[]{"Gold","Silver","Bronze","Selen"}));
+private CheckBoxButtons checkBoxButtons;
+private ArrayList<String> radioButtonsToCheck = new ArrayList<String>( Arrays.asList(new String[]{"Gold","Silver","Bronze","Selen"}));
+private ArrayList<String> checkBoxButtonsToCheck = new ArrayList<String>( Arrays.asList(new String[]{"Water","Earth","Wind","Fire"}));
 
-@Test
-public void tryRadioButtons () {
 
+
+@BeforeClass
+public void checkLoginAndPrepareDiffElemPage(){
 
     //For sure we are testing state here but not code as suppose
     //But in any case we need some setups for the test
@@ -37,27 +41,18 @@ public void tryRadioButtons () {
 
     //No sence to test radiobuttons if we are not logged in. Test is failed in this case.
     if (!epamLoginPage.isLoggedIn()) {
-           //We are not logged in
-           assertTrue(false);
+        //We are not logged in
+        assertTrue(false);
     }
 
     differentElements = new EpamDifferentElementsPage(myPersonalDriver);
     differentElements.open();
+}
 
-    //We will click Radio Buttons on the EpamDifferentElementsPage one by one and check whether they are selected
-    //It is our test
 
-    //Does RadioButtons exist on the page?
-    //differentElements.hasRadioButtons() ?
-    //Then we will get it
-    //myRadioButtons = differentElements.getRadioButtons()
-    //else assertTrue(false)
+@Test
+public void tryRadioButtons () {
 
-     //click by one and check whether it is selected
-     //myRadioButtons.getButtonsList
-
-     //myRadioButton.click(button)
-     //myRadioButton.isChecked (button)
 
     //Does RadioButtons exist on the page? If it does not the test is failed
      if (! differentElements.hasRadioButtons()) {
@@ -67,22 +62,78 @@ public void tryRadioButtons () {
          radioButtons = differentElements.getRadioButtons();
      }
 
+     //click radio button and check log list.
+     //The last line of log has to contain buttons name
 
-     //click radio button and check log list. The log list works for "chrome". For "firefox" it does not work
-     //Its last line has contain buttons name
 
-     for (String str: buttonsToCheck ) {
-         radioButtons.clickRadioButton(str);
-         System.out.println(str);
+     for (String radioButtonName : radioButtonsToCheck ) {
+         radioButtons.clickRadioButton(radioButtonName);
+         System.out.println(radioButtonName);
 
-         if (differentElements.lastLogRecordContains(str))
+/*       if (differentElements.lastLogRecordContains(radioButtonName))
               assertTrue(true);
          else
+             assertTrue(false);*/
+
+         if (! differentElements.lastLogRecordContains(radioButtonName))
              assertTrue(false);
 
-
      }
+          assertTrue(true);
 
 
 }
+
+@Test
+public void tryCheckBoxButtons() {
+
+    //Does CheckBoxButtons exist on the page? If it does not the test is failed
+    if (! differentElements.hasCheckBoxButtons()) {
+        assertTrue(false);
+    }
+    else {
+        checkBoxButtons = differentElements.getCheckBoxButtons();
+    }
+
+    //click checkbox button and check log list.
+    //The last line of log has to contain buttons name
+
+
+    for (String checkBoxButtonName : checkBoxButtonsToCheck ) {
+        checkBoxButtons.clickCheckBoxButton(checkBoxButtonName);
+        System.out.println(checkBoxButtonName);
+
+        //if checkbox button is selected we are looking for substrings "checkBoxButtonName" and "true"
+        //otherwise for substrings "checkBoxButtonName" and "false"
+        String isSelectedTrueOrFalse = "trueOrfalse";
+
+        if (checkBoxButtons.isSelectedCheckBoxButton(checkBoxButtonName)) {
+            isSelectedTrueOrFalse = "true";
+        } else {
+            isSelectedTrueOrFalse = "false";
+        }
+
+         System.out.println(Boolean.toString(differentElements.lastLogRecordContains(checkBoxButtonName )));
+
+/*
+         if (differentElements.lastLogRecordContains(checkBoxButtonName )) {
+             System.out.println(checkBoxButtonName+" "+isSelectedTrueOrFalse);
+             assertTrue(true); }
+         else
+             System.out.println(checkBoxButtonName+" "+isSelectedTrueOrFalse);
+             assertTrue(false);
+*/
+
+        if ( ! differentElements.lastLogRecordContains(checkBoxButtonName, isSelectedTrueOrFalse)) {
+            System.out.println(checkBoxButtonName+" "+isSelectedTrueOrFalse);
+            assertTrue(false); }
+
+
+
+    }
+
+    assertTrue(true);
+
+}
+
 }

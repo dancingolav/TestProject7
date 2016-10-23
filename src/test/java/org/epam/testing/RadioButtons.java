@@ -15,7 +15,9 @@ public class RadioButtons {
     private WebDriver driverHere;
     private List<WebElement> elementS;
     private By radioElementSPath = By.xpath("//label[@class='label-radio']/input[@name='metal'][@type='radio']");
-    private String radioName = "//label[@class='label-radio'][normalize-space(.)=";
+    //It also works fine:
+    //private String partOfRadioButtonXPath = "//label[@class='label-radio'][normalize-space(.)=";
+    private String partOfRadioButtonXPath = "//label[@class='label-radio'][contains(.,";
 
 
     public RadioButtons(WebDriver driver) {
@@ -23,29 +25,9 @@ public class RadioButtons {
         this.elementS = driverHere.findElements(radioElementSPath);
     }
 
-    public void clickRadioButton(String buttonName) {
-
-
-        //Why does it not work? It looks like e.getText().contains(buttonName) does not return what i heed
-        //Why? Who know?
-
-        /*Ask me. And I will laugh quietly.
-          Give me any question. You will not have my answer.
-          My name is just time worn Hieroglyph.
-          My clothes are patched with the wind.
-        */
-
-       /* for (WebElement e: elementS) {
-            System.out.println(e.getText());
-
-             if (e.getText().contains(buttonName)) {
-                 System.out.println(e.getText());
-                 e.click();
-             }
-        }*/
-
-        //This works.
-        driverHere.findElement(By.xpath(radioName+"'"+buttonName+"']")).click();
+    public void clickRadioButton(final String buttonName) {
+        //It works. Looking for radio button by xpass and check(click) it
+        driverHere.findElement(formRadioButtonByXPass ( buttonName, partOfRadioButtonXPath)).click();
 
     }
 
@@ -59,10 +41,10 @@ public class RadioButtons {
     }
 
 
-    public boolean isSelectedCorrectRadioButton(String buttonName) {
+    public boolean isSelectedCorrectRadioButton(final String buttonName) {
 
         for (WebElement e: elementS) {
-            if (e.isSelected() && e.equals(buttonName))
+            if (e.isSelected() && e.equals(driverHere.findElement(formRadioButtonByXPass ( buttonName, partOfRadioButtonXPath))))
                 return true;
         }
         return false;
@@ -74,5 +56,10 @@ public class RadioButtons {
 
     public List<WebElement> getElements() {
         return elementS;
+    }
+
+    //Looking for radio button, we need, using its label's text
+    public By formRadioButtonByXPass (final String buttonName, final String partOfRadioButtonXPath){
+        return By.xpath(partOfRadioButtonXPath+"'"+buttonName+"'"+")]/input[@name='metal'][@type='radio']");
     }
 }
