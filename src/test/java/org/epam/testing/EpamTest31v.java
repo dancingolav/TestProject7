@@ -1,6 +1,5 @@
 package org.epam.testing;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,7 +11,6 @@ import org.testng.annotations.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertTrue;
 
@@ -88,7 +86,7 @@ public class EpamTest31v {
 
     }
 
-    @Test(dataProviderClass=DataForLogin.class, dataProvider="dataforlogin")
+    @Test(dataProviderClass=LoginData.class, dataProvider="dataforlogin")
 
     public void tryLogin(boolean testType, String accountName, String accountPwd) {
         System.out.println("logging into the account");

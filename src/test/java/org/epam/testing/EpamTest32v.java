@@ -18,8 +18,10 @@ public class EpamTest32v {
 private EpamDifferentElementsPage differentElements;
 private RadioButtons radioButtons;
 private CheckBoxButtons checkBoxButtons;
-private ArrayList<String> radioButtonsToCheck = new ArrayList<String>( Arrays.asList(new String[]{"Gold","Silver","Bronze","Selen"}));
-private ArrayList<String> checkBoxButtonsToCheck = new ArrayList<String>( Arrays.asList(new String[]{"Water","Earth","Wind","Fire"}));
+private ArrayList<String> radioButtonsToCheck=
+        new ArrayList<>(Arrays.asList(new String [] {"Gold","Silver","Bronze","Selen","Selen","Bronze","Silver","Gold"}));
+private ArrayList<String> checkBoxButtonsToCheck=
+        new ArrayList<>(Arrays.asList(new String [] {"Water","Earth","Wind","Fire","Fire","Wind","Earth","Water" }));
 
 
 
@@ -53,7 +55,6 @@ public void checkLoginAndPrepareDiffElemPage(){
 @Test
 public void tryRadioButtons () {
 
-
     //Does RadioButtons exist on the page? If it does not the test is failed
      if (! differentElements.hasRadioButtons()) {
          assertTrue(false);
@@ -70,10 +71,6 @@ public void tryRadioButtons () {
          radioButtons.clickRadioButton(radioButtonName);
          System.out.println(radioButtonName);
 
-/*       if (differentElements.lastLogRecordContains(radioButtonName))
-              assertTrue(true);
-         else
-             assertTrue(false);*/
 
          if (! differentElements.lastLogRecordContains(radioButtonName))
              assertTrue(false);
@@ -87,7 +84,7 @@ public void tryRadioButtons () {
 @Test
 public void tryCheckBoxButtons() {
 
-    //Does CheckBoxButtons exist on the page? If it does not the test is failed
+        //Does CheckBoxButtons exist on the page? If it does not the test is failed
     if (! differentElements.hasCheckBoxButtons()) {
         assertTrue(false);
     }
@@ -105,6 +102,7 @@ public void tryCheckBoxButtons() {
 
         //if checkbox button is selected we are looking for substrings "checkBoxButtonName" and "true"
         //otherwise for substrings "checkBoxButtonName" and "false"
+
         String isSelectedTrueOrFalse = "trueOrfalse";
 
         if (checkBoxButtons.isSelectedCheckBoxButton(checkBoxButtonName)) {
@@ -115,20 +113,9 @@ public void tryCheckBoxButtons() {
 
          System.out.println(Boolean.toString(differentElements.lastLogRecordContains(checkBoxButtonName )));
 
-/*
-         if (differentElements.lastLogRecordContains(checkBoxButtonName )) {
-             System.out.println(checkBoxButtonName+" "+isSelectedTrueOrFalse);
-             assertTrue(true); }
-         else
-             System.out.println(checkBoxButtonName+" "+isSelectedTrueOrFalse);
-             assertTrue(false);
-*/
-
         if ( ! differentElements.lastLogRecordContains(checkBoxButtonName, isSelectedTrueOrFalse)) {
             System.out.println(checkBoxButtonName+" "+isSelectedTrueOrFalse);
             assertTrue(false); }
-
-
 
     }
 

@@ -8,7 +8,7 @@ import org.testng.annotations.DataProvider;
  */
 
 
-public class DataForLogin {
+public class LoginData {
       @DataProvider(name="dataforlogin")
        public static Object [][] createDataForLogin() {
            return new Object[][] {
