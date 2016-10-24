@@ -1,14 +1,30 @@
 # TestProject
 
-Тесты: Login (EpamTest31v) и Radio Buttons (EpamTest31v) с использованием PageObject Pattern
+Тесты: 
 
-Test RadioButtons считается пройденным, если в окне логов отображаются  правильные названия radio buttons.
+*Login (LoginTest)
+*RadioButtons на вебстранице https://jdi-framework.github.io/tests/page8.htm  (DifferenElementsTests)
+*CheckBoxButtons на вебстранице https://jdi-framework.github.io/tests/page8.htm  (DifferenElementsTests)
+*DropDownMenu https://jdi-framework.github.io/tests/page8.htm  (DifferenElementsTests)
+*Buttons https://jdi-framework.github.io/tests/page8.htm  (DifferenElementsTests)
+
+
+-Тест Login считается пройденным, если при корректных данных происходит вход в систему, а при некорректных - 
+не происходит.
+-Тест RadioButtons считается пройденным, если в окне логов отображаются  правильные названия выбранных 
+radio buttons.
+-Тест СheckBoxButtons считается пройденным, если в окне логов отображаются  правильные названия выбранных 
+checkbox buttons с корректным  указанием действия (отмечена или снята). 
+-Тест DropDownMenu считается пройденным, если в окне лога отображается выбранная опция меню.
+-Тест Buttons считается пройденным, если при нажатии на кнопку в окне лога отображается правильное название 
+нажатой кнопки.
+
 
 Для запуска теста можно указать желаемый тип браузера и путь и имя файла драйвера в файле testng.xml.
 В настоящий момент можно использовать FireFox, IE, Opera, Chrome.
 Данные о типе браузера, путь и имя файла драйвера будут взяты тестом через @Parameters из файла testng.xml,
 и их можно менять. Примеры настройки приведены в данном файле (см. ниже) и в файле testng.xml. Данные для тестирования
-тестовые методы получают через @Dataprovider.
+LoginTest получает через @Dataprovider.
 
 ЗАПУСК И НАСТРОЙКА ТЕСТА<br />
 

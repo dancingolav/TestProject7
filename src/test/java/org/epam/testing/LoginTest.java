@@ -1,5 +1,7 @@
 package org.epam.testing;
 
+import org.epam.testing.pageobjects.EpamLoginPage;
+import org.epam.testing.testdata.LoginData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -17,7 +19,7 @@ import static org.testng.Assert.assertTrue;
 /**
  * Created by AlexSh on 18.10.2016.
  */
-public class EpamTest31v {
+public class LoginTest {
 
     //it is static & public. It is for all. Love it or leave it.
     public static  WebDriver myPersonalDriver;
@@ -31,8 +33,10 @@ public class EpamTest31v {
      */
 
     @BeforeSuite
-    @Parameters({"browser", "pathToDriver"})
-    public void beforeSuite(@Optional("chrome") String browser, @Optional("D:\\PersonalDrivers\\chromedriver.exe") String pathToDriver) {
+    @Parameters({"browser", "pathToDriver","loginPageUrl"})
+    public void beforeSuite(@Optional("chrome") String browser,
+                            @Optional("D:\\PersonalDrivers\\chromedriver.exe") String pathToDriver,
+                            @Optional("https://jdi-framework.github.io/tests/") String loginPageUrl) {
 
         ArrayList<String> browsersHerd = new ArrayList<String>(Arrays.asList(new String[]{"firefox", "chrome", "ie", "opera"}));
 
@@ -87,7 +91,6 @@ public class EpamTest31v {
     }
 
     @Test(dataProviderClass=LoginData.class, dataProvider="dataforlogin")
-
     public void tryLogin(boolean testType, String accountName, String accountPwd) {
         System.out.println("logging into the account");
 

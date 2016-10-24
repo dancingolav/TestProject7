@@ -1,5 +1,9 @@
-package org.epam.testing;
+package org.epam.testing.pageobjects;
 
+import org.epam.testing.pageobjects.components.ButtonComponent;
+import org.epam.testing.pageobjects.components.CheckBoxButtons;
+import org.epam.testing.pageobjects.components.DropDownMenu;
+import org.epam.testing.pageobjects.components.RadioButtons;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,7 +35,7 @@ public class EpamDifferentElementsPage {
 
 public void open () {
     //impicit timeout
-    driverHere.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+    driverHere.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
     driverHere.get(epamDiffElementsPageUrl);
     driverHere.manage().window().maximize();
 }
@@ -47,7 +51,9 @@ public RadioButtons getRadioButtons() {
 
 public CheckBoxButtons getCheckBoxButtons() {return new CheckBoxButtons(driverHere);}
 
+public DropDownMenu getDropDownMenu() {return new DropDownMenu(driverHere);}
 
+public ButtonComponent getButtonComponent()   {return new ButtonComponent(driverHere);}
 
 //the page must contain radio buttons
 //it is first part of test
@@ -63,33 +69,44 @@ public boolean hasRadioButtons() {
 
     }
 
+     public boolean hasDropDownMenu () {
+         return new DropDownMenu(driverHere).hasDropDownMenu();
+    }
 
+//the page must contain buttons to test
+//it is first part of test
+    public boolean hasButtonS() {
+        return new ButtonComponent(driverHere).hasButtonS();
+    }
+
+    public List<WebElement> getButtonS () {
+        return new ButtonComponent(driverHere).getButtonS();
+
+    }
 
 
 //Check whether last record contains correct string
-//If  string contains correct button's name and any words that we are looking for,  test is passed
+//If  string contains correct button's name and all of words that we are looking for,  test is passed
 public boolean lastLogRecordContains(String ... partsOfStringsWeAreLooking) {
 
     //get log list
     logElementS=driverHere.findElements(logRecord) ;
     boolean hasAllSubStrings =true;
-    System.out.println(logElementS.size());
+
     if (logElementS.size() !=0) {
-        System.out.println((logElementS.get(0)).getText());
 
         for (String partOfString : partsOfStringsWeAreLooking) {
-            System.out.println(partOfString);
             System.out.println(logElementS.get(0).getText());
-            hasAllSubStrings = hasAllSubStrings && (logElementS.get(0).getText().contains(partOfString));
+            hasAllSubStrings = hasAllSubStrings &&
+                    (logElementS.get(0).getText().toLowerCase().contains(partOfString.toLowerCase()));
         }
 
         return hasAllSubStrings;
     }
     else
         return false;
+
+
 }
-
-
-
 
 }

@@ -1,4 +1,4 @@
-package org.epam.testing;
+package org.epam.testing.testdata;
 
 import org.apache.commons.lang3.StringUtils;
 import org.testng.annotations.DataProvider;

@@ -1,4 +1,4 @@
-package org.epam.testing;
+package org.epam.testing.pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -39,12 +39,12 @@ public class EpamLoginPage {
 
     //Two constructors
     public EpamLoginPage( final WebDriver driver ) {
-        driverHere = driver;
+        this.driverHere = driver;
 
     }
     public EpamLoginPage (final WebDriver driver, final String pageUrl) {
-        driverHere = driver;
-        epamLoginPageUrl = pageUrl;
+        this.driverHere = driver;
+        this.epamLoginPageUrl = pageUrl;
     };
 
 

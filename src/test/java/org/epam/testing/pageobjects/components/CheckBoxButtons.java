@@ -1,4 +1,4 @@
-package org.epam.testing;
+package org.epam.testing.pageobjects.components;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,11 +33,7 @@ public class CheckBoxButtons {
 
     public boolean isSelectedCheckBoxButton(final String buttonName) {
 
-        System.out.println(buttonName.toUpperCase());
-        System.out.println(Boolean.toString(driverHere.findElement(By.xpath("//label[@class='label-checkbox'][contains(.,'Water')]/input[@type ='checkbox']")).isSelected()));
-
         if (driverHere.findElement(formCheckButtonByXPass ( buttonName, partOfCheckButtonXPath)).isSelected()) {
-
                 return true;
         }
         return false;
@@ -51,12 +47,10 @@ public class CheckBoxButtons {
         return elementS;
     }
 
-    //Looking for checkbox button, we need, using its label's text
+    //Looking for checkbox button we need, using its label's text
     public By formCheckButtonByXPass (final String buttonName, final String partOfCheckButtonXPath){
-        System.out.println(partOfCheckButtonXPath+"'"+buttonName+"'"+")]/input[@type ='checkbox']");
+
         return By.xpath(partOfCheckButtonXPath+"'"+buttonName+"'"+")]/input[@type ='checkbox']");
     }
-
-
 
 }

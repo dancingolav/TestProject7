@@ -26,12 +26,12 @@
         <parameter name="browser"  value="chrome"/>
         <parameter name="pathToDriver"  value="D:\PersonalDrivers\chromedriver.exe"/>
         <classes>
-            <class name= "org.epam.testing.EpamTest31v" />
+            <class name= "org.epam.testing.LoginTest" />
         </classes>
     </test>
     <test name="DifferentElementsPage">
         <classes>
-            <class name= "org.epam.testing.EpamTest32v" />
+            <class name= "org.epam.testing.DifferenElementsTests" />
         </classes>
     </test>
 
