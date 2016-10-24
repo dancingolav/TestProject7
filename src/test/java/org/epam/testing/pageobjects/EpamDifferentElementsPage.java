@@ -28,6 +28,7 @@ public class EpamDifferentElementsPage {
     public EpamDifferentElementsPage(final WebDriver driver) {
         driverHere = driver;
     };
+
     public EpamDifferentElementsPage(final WebDriver driver, final String pageUrl) {
            driverHere = driver;
            epamDiffElementsPageUrl = pageUrl;
@@ -85,7 +86,7 @@ public boolean hasRadioButtons() {
     }
 
 
-//Check whether last record contains correct string
+//Check whether last record contains correct string/line
 //If  string contains correct button's name and all of words that we are looking for,  test is passed
 public boolean lastLogRecordContains(String ... partsOfStringsWeAreLooking) {
 
