@@ -2,29 +2,29 @@
 
 Тесты: 
 
-*Login (LoginTest)
-*RadioButtons на вебстранице https://jdi-framework.github.io/tests/page8.htm  (DifferenElementsTests)
-*CheckBoxButtons на вебстранице https://jdi-framework.github.io/tests/page8.htm  (DifferenElementsTests)
-*DropDownMenu https://jdi-framework.github.io/tests/page8.htm  (DifferenElementsTests)
-*Buttons https://jdi-framework.github.io/tests/page8.htm  (DifferenElementsTests)
+*Login (LoginTest)<br />
+*RadioButtons на вебстранице https://jdi-framework.github.io/tests/page8.htm  (DifferenElementsTests)<br />
+*CheckBoxButtons на вебстранице https://jdi-framework.github.io/tests/page8.htm  (DifferenElementsTests)<br />
+*DropDownMenu https://jdi-framework.github.io/tests/page8.htm  (DifferenElementsTests)<br />
+*Buttons https://jdi-framework.github.io/tests/page8.htm  (DifferenElementsTests)<br />
 
 
--Тест Login считается пройденным, если при корректных данных происходит вход в систему, а при некорректных - 
-не происходит.
--Тест RadioButtons считается пройденным, если в окне логов отображаются  правильные названия выбранных 
-radio buttons.
--Тест СheckBoxButtons считается пройденным, если в окне логов отображаются  правильные названия выбранных 
-checkbox buttons с корректным  указанием действия (отмечена или снята). 
--Тест DropDownMenu считается пройденным, если в окне лога отображается выбранная опция меню.
--Тест Buttons считается пройденным, если при нажатии на кнопку в окне лога отображается правильное название 
-нажатой кнопки.
+-Тест Login считается пройденным, если при корректных данных происходит вход в систему, а при некорректных - <br />
+не происходит.<br />
+-Тест RadioButtons считается пройденным, если в окне логов отображаются  правильные названия выбранных <br />
+radio buttons.<br />
+-Тест СheckBoxButtons считается пройденным, если в окне логов отображаются  правильные названия выбранных<br /> 
+checkbox buttons с корректным  указанием действия (отмечена или снята). <br />
+-Тест DropDownMenu считается пройденным, если в окне лога отображается выбранная опция меню.<br />
+-Тест Buttons считается пройденным, если при нажатии на кнопку в окне лога отображается правильное название <br />
+нажатой кнопки.<br />
 
 
-Для запуска теста можно указать желаемый тип браузера и путь и имя файла драйвера в файле testng.xml.
-В настоящий момент можно использовать FireFox, IE, Opera, Chrome.
-Данные о типе браузера, путь и имя файла драйвера будут взяты тестом через @Parameters из файла testng.xml,
-и их можно менять. Примеры настройки приведены в данном файле (см. ниже) и в файле testng.xml. Данные для тестирования
-LoginTest получает через @Dataprovider.
+Для запуска теста можно указать желаемый тип браузера и путь и имя файла драйвера в файле testng.xml.<br />
+В настоящий момент можно использовать FireFox, IE, Opera, Chrome.<br />
+Данные о типе браузера, путь и имя файла драйвера будут взяты тестом через @Parameters из файла testng.xml,<br />
+и их можно менять. Примеры настройки приведены в данном файле (см. ниже) и в файле testng.xml. Данные для тестирования<br />
+LoginTest получает через @Dataprovider.<br />
 
 ЗАПУСК И НАСТРОЙКА ТЕСТА<br />
 
