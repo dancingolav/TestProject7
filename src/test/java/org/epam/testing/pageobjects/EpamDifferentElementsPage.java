@@ -57,14 +57,14 @@ public DropDownMenu getDropDownMenu() {return new DropDownMenu(driverHere);}
 public ButtonComponent getButtonComponent()   {return new ButtonComponent(driverHere);}
 
 //the page must contain radio buttons
-//it is first part of test
+//it is first part of our test
 public boolean hasRadioButtons() {
    return new RadioButtons(driverHere).hasRadioButtons();
 
 }
 
 //the page must contain checkbox buttons
-//it is first part of test
+//it is first part of our test
     public boolean hasCheckBoxButtons() {
         return new CheckBoxButtons(driverHere).hasCheckBoxButtons();
 
@@ -75,7 +75,7 @@ public boolean hasRadioButtons() {
     }
 
 //the page must contain buttons to test
-//it is first part of test
+//it is first part of our test
     public boolean hasButtonS() {
         return new ButtonComponent(driverHere).hasButtonS();
     }
@@ -86,8 +86,8 @@ public boolean hasRadioButtons() {
     }
 
 
-//Check whether last record contains correct string/line
-//If  string contains correct button's name and all of words that we are looking for,  test is passed
+//Check whether last record in log contains correct string/line
+//If  the  string contains correct button's name and all of words that we are looking for,  the test is passed
 public boolean lastLogRecordContains(String ... partsOfStringsWeAreLooking) {
 
     //get log list
