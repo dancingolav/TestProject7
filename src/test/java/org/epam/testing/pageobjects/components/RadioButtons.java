@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ *
  * Created by AlexSh on 19.10.2016.
  */
 public class RadioButtons {

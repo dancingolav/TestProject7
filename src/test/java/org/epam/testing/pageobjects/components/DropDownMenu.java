@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 /**
+ *
  * Created by AlexSh on 23.10.2016.
  */
 public class DropDownMenu {

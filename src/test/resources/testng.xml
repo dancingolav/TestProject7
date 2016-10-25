@@ -1,41 +1,48 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="TestAll">
 
+
+
+<suite name="TestAll">
+    <parameter name="browser"  value="opera"/>
+    <parameter name="pathToDriver"  value="D:\\PersonalDrivers\\operadriver.exe"/>
+    <parameter name="loginPageUrl"  value="https://jdi-framework.github.io/tests/"/>
     <test name="LoginTest">
         <!--"browser", "pathToDriver" Use one of parameters' set ro run
         test with browser of your choice. Don't forgot to make change to proper driver's directory!
              ===============================================================================
-            "firefox", "D:\PersonalDrivers\geckodriver.exe"
+            "firefox", "D:\\PersonalDrivers\\geckodriver.exe"
             <parameter name="browser"  value="firefox"/>
             <parameter name="pathToDriver"  value="D:\PersonalDrivers\geckodriver.exe"/>
              ================================================================================
-            "chrome", "D:\PersonalDrivers\chromedriver.exe"
+            "chrome", "D:\\PersonalDrivers\\chromedriver.exe"
             <parameter name="browser"  value="chrome"/>
             <parameter name="pathToDriver"  value="D:\PersonalDrivers\chromedriver.exe"/>
              ================================================================================
-             "ie", "D:\PersonalDrivers\IEDriverServer.exe"
+             "ie", "D:\\PersonalDrivers\\IEDriverServer.exe"
              <parameter name="browser"  value="ie"/>
              <parameter name="pathToDriver"  value="D:\PersonalDrivers\IEDriverServer.exe"/>
              =================================================================================
-            "opera","D:\PersonalDrivers\operadriver.exe"
+            "opera","D:\\PersonalDrivers\\operadriver.exe"
              <parameter name="browser"  value="opera"/>
              <parameter name="pathToDriver"  value="D:\PersonalDrivers\operadriver.exe"/>
 
         -->
-        <parameter name="browser"  value="chrome"/>
-        <parameter name="pathToDriver"  value="D:\PersonalDrivers\chromedriver.exe"/>
+
+
         <classes>
             <class name= "org.epam.testing.LoginTest" />
         </classes>
     </test>
+
+
     <test name="DifferentElementsPage">
         <classes>
             <class name= "org.epam.testing.DifferenElementsTests" />
         </classes>
     </test>
 
-
+</suite>
 
 
     <!-- You can run one more test or the same test with different browser
@@ -48,4 +55,3 @@
     </test>
     -->
 
-</suite>

@@ -5,6 +5,7 @@ import org.epam.testing.pageobjects.components.ButtonComponent;
 import org.epam.testing.pageobjects.components.CheckBoxButtons;
 import org.epam.testing.pageobjects.components.DropDownMenu;
 import org.epam.testing.pageobjects.components.RadioButtons;
+import org.epam.testing.testdata.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -22,10 +23,11 @@ import static org.testng.AssertJUnit.assertTrue;
 public class DifferenElementsTests {
 
     private EpamDifferentElementsPage differentElements;
-    private RadioButtons radioButtons;
+
+   /* private RadioButtons radioButtons;
     private CheckBoxButtons checkBoxButtons;
     private DropDownMenu dropDownMenu;
-    private ButtonComponent buttonComponent;
+    private ButtonComponent buttonComponent;*/
 
     private ArrayList<String> radioButtonsToCheck =
             new ArrayList<>(Arrays.asList(new String[]{"Gold", "Silver", "Bronze", "Selen",
@@ -43,6 +45,7 @@ public class DifferenElementsTests {
     @BeforeClass
     public void checkLoginAndPrepareDiffElemPage() {
 
+
         //For sure we are testing state here but not code as suppose
         //But in any case we need some setups for the test
 
@@ -57,127 +60,92 @@ public class DifferenElementsTests {
         }
 
         //No sence to test radiobuttons if we are not logged in. Test is failed in this case.
-        if (!epamLoginPage.isLoggedIn()) {
-            //We are not logged in
-            assertTrue(false);
-        }
+        if (!epamLoginPage.isLoggedIn())  assertTrue(false);
 
         differentElements = new EpamDifferentElementsPage(myPersonalDriver);
         differentElements.open();
     }
 
 
-    @Test
-    public void tryRadioButtons() {
+    @Test (dataProviderClass=RadioButtonsData.class, dataProvider="radiobuttons")
+    public void tryRadioButtons(String radioButtonName) {
+
         System.out.println("RADIO BUTTONS TEST");
         //Does RadioButtons exist on the page? If it does not the test is failed
-        if (!differentElements.hasRadioButtons()) {
-            assertTrue(false);
-        } else {
-            radioButtons = differentElements.getRadioButtons();
-        }
+        if (!differentElements.hasRadioButtons()) assertTrue(false);
 
         //click radio button and check log list.
         //The last line of log has to contain buttons name
+        differentElements.getRadioButtons().clickRadioButton(radioButtonName);;
+
+        //Looking in logs for radio button's name
+        assertTrue(differentElements.lastLogRecordContains(radioButtonName));
+     }
 
 
-        for (String radioButtonName : radioButtonsToCheck) {
-            radioButtons.clickRadioButton(radioButtonName);
-            System.out.println(radioButtonName);
+    @Test (dataProviderClass=CheckBoxButtonsData.class, dataProvider="checkboxbuttons")
+    public void tryCheckBoxButtons(String checkBoxButtonName ) {
 
-            //Looking in logs for button's name
-            if (!differentElements.lastLogRecordContains(radioButtonName))
-                assertTrue(false);
-
-        }
-        assertTrue(true);
-
-
-    }
-
-    @Test
-    public void tryCheckBoxButtons() {
         System.out.println("CHECKBOX BUTTONS TEST");
+
         //Does CheckBoxButtons exist on the page? If it does not the test is failed
-        if (!differentElements.hasCheckBoxButtons()) {
-            assertTrue(false);
-        } else {
-            checkBoxButtons = differentElements.getCheckBoxButtons();
-        }
+        if (!differentElements.hasCheckBoxButtons()) assertTrue(false);
+
+        CheckBoxButtons checkBoxButtons = differentElements.getCheckBoxButtons();
 
         //click checkbox button and check log list.
         //The last line of log has to contain buttons name
+        checkBoxButtons.clickCheckBoxButton(checkBoxButtonName);;
 
+        //if checkbox button is selected we are looking for substrings "checkBoxButtonName" and "true"
+        //otherwise for substrings "checkBoxButtonName" and "false"
 
-        for (String checkBoxButtonName : checkBoxButtonsToCheck) {
-            checkBoxButtons.clickCheckBoxButton(checkBoxButtonName);
-            System.out.println(checkBoxButtonName);
-
-            //if checkbox button is selected we are looking for substrings "checkBoxButtonName" and "true"
-            //otherwise for substrings "checkBoxButtonName" and "false"
-
-            String isSelectedTrueOrFalse = "trueOrfalse";
-
-            if (checkBoxButtons.isSelectedCheckBoxButton(checkBoxButtonName)) {
-                isSelectedTrueOrFalse = "true";
-            } else {
-                isSelectedTrueOrFalse = "false";
-            }
+         String isSelectedTrueOrFalse =
+                 (checkBoxButtons.isSelectedCheckBoxButton(checkBoxButtonName))? "true": "false";
 
             //Looking in logs for button's name and "true" (selected) or "false" (unselected)
-            if (!differentElements.lastLogRecordContains(checkBoxButtonName, isSelectedTrueOrFalse)) {
-                System.out.println(checkBoxButtonName + " " + isSelectedTrueOrFalse);
-                assertTrue(false);
-            }
+            //The method is using varang, so we can add parameters (substrings to look for) if we need
 
-        }
-
-        assertTrue(true);
-
+         assertTrue(differentElements.lastLogRecordContains(checkBoxButtonName, isSelectedTrueOrFalse));
     }
 
-    @Test
-    public void tryDropDownMenu() {
+    @Test (dataProviderClass=DropDownMenuOptionsData.class, dataProvider="dropdownmenuoptions")
+    public void tryDropDownMenu(String dropDownOption) {
 
         System.out.println("DROPDOWN MENU TEST");
-        if (!differentElements.hasDropDownMenu()) {
-            assertTrue(false);
-        } else {
-            dropDownMenu = differentElements.getDropDownMenu();
-        }
 
+        //First part of test. Do we have smth to test on the page?
+        if (!differentElements.hasDropDownMenu()) assertTrue(false);
 
-        for (String dropDownOption : dropDownMenuOptions) {
+        DropDownMenu dropDownMenu = differentElements.getDropDownMenu();
+
+        //If the chosen option is already in "selected" state we will not see any changes in logs
+        //It's OK but if it is not in "selected" state we will check....
+
+        if (dropDownMenu.isSelectedDropDownMenuOption(dropDownOption))
+            assertTrue(true);
+        else  {
+
             dropDownMenu.clickDropDownMenu(dropDownOption);
-
-            System.out.println(dropDownOption);
-
-            //If the chosen option is in "selected" state we will not see any changes in logs
-            if (!dropDownMenu.isSelectedDropDownMenuOption(dropDownOption)) {
-                //Looking in logs for dropdown menu option
-                if (!differentElements.lastLogRecordContains(dropDownOption))
-                    assertTrue(false);
-            }
+             //Looking in logs for dropdown menu option
+            assertTrue (differentElements.lastLogRecordContains(dropDownOption));
         }
-        assertTrue(true);
+
+
     }
 
-    @Test
-    public void tryButtons() {
+    @Test (dataProviderClass=ButtonsData.class, dataProvider="buttonsvalues")
+    public void tryButtons(String buttonValue) {
 
         System.out.println("BUTTONS TEST");
 
-
+        //First part of test. Do we have smth to test on the page?
         if (!differentElements.hasButtonS()) assertTrue(false);
-        buttonComponent = differentElements.getButtonComponent();
 
-        for (String buttonValue :buttonsCompomentToCheck) {
-             buttonComponent.clickButtonFromComponent(buttonValue);
-            //Click button and check log. It is our test.
-             assertTrue(differentElements.lastLogRecordContains(buttonValue, "button clicked"));
+        differentElements.getButtonComponent().clickButtonFromComponent(buttonValue);
+        //Click button and check log. It is our test.
+        assertTrue(differentElements.lastLogRecordContains(buttonValue, "button clicked"));
 
-        }
-        assertTrue(false);
-    }
+      }
 
 }

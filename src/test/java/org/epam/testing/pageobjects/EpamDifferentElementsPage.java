@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
+ *
  * Created by AlexSh on 19.10.2016.
  */
 public class EpamDifferentElementsPage {

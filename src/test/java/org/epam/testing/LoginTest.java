@@ -4,9 +4,11 @@ import org.epam.testing.pageobjects.EpamLoginPage;
 import org.epam.testing.testdata.LoginData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -38,6 +40,8 @@ public class LoginTest {
                             @Optional("D:\\PersonalDrivers\\chromedriver.exe") String pathToDriver,
                             @Optional("https://jdi-framework.github.io/tests/") String loginPageUrl) {
 
+
+
         ArrayList<String> browsersHerd = new ArrayList<String>(Arrays.asList(new String[]{"firefox", "chrome", "ie", "opera"}));
 
         //System's properties we have to set to use drivers
@@ -49,7 +53,10 @@ public class LoginTest {
         };
         //Checking whether file is exist
         File f = new File(pathToDriver);
-        if (!f.exists() || f.isDirectory()) {
+        if (!(f.exists() && !f.isDirectory())) {
+            System.out.println(!f.isDirectory());
+            System.out.println(f.exists());
+            System.out.println(pathToDriver);
             System.out.println("Error! Check your browser's path in testng.xml!");
             Assert.fail("Error! Check your browser's path in testng.xml!");
         }
@@ -78,6 +85,7 @@ public class LoginTest {
             case "chrome":
                 System.setProperty(sysProperty[3], pathToDriver);
                 myPersonalDriver = new ChromeDriver();
+
                 break;
         }
 

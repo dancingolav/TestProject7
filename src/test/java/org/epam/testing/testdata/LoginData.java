@@ -8,6 +8,7 @@ import org.testng.annotations.DataProvider;
  */
 
 
+
 public class LoginData {
       @DataProvider(name="dataforlogin")
        public static Object [][] createDataForLogin() {

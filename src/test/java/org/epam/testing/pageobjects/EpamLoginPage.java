@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import java.util.concurrent.TimeUnit;
 
 /**
+ *
  * Created by AlexSh on 18.10.2016.
  */
 public class EpamLoginPage {
@@ -38,11 +39,11 @@ public class EpamLoginPage {
     private WebDriver driverHere;
 
     //Two constructors
-    public EpamLoginPage( final WebDriver driver ) {
+    public EpamLoginPage( WebDriver driver ) {
         this.driverHere = driver;
-
+        epamLoginPageUrl = "https://jdi-framework.github.io/tests/";
     }
-    public EpamLoginPage (final WebDriver driver, final String pageUrl) {
+    public EpamLoginPage ( WebDriver driver, String pageUrl) {
         this.driverHere = driver;
         this.epamLoginPageUrl = pageUrl;
     };
@@ -51,11 +52,19 @@ public class EpamLoginPage {
 
     public void open() {
 
-    driverHere.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+    driverHere.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
     driverHere.get(epamLoginPageUrl);
     driverHere.manage().window().maximize();
-
 }
+
+    public void open(String strUrl) {
+
+        driverHere.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        driverHere.get(strUrl);
+        driverHere.manage().window().maximize();
+    }
+
+
 
     public void close () {
         driverHere.close();
