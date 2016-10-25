@@ -24,24 +24,6 @@ public class DifferenElementsTests {
 
     private EpamDifferentElementsPage differentElements;
 
-   /* private RadioButtons radioButtons;
-    private CheckBoxButtons checkBoxButtons;
-    private DropDownMenu dropDownMenu;
-    private ButtonComponent buttonComponent;*/
-
-    private ArrayList<String> radioButtonsToCheck =
-            new ArrayList<>(Arrays.asList(new String[]{"Gold", "Silver", "Bronze", "Selen",
-                                                       "Selen", "Bronze", "Silver", "Gold"}));
-    private ArrayList<String> checkBoxButtonsToCheck =
-            new ArrayList<>(Arrays.asList(new String[]{"Water", "Earth", "Wind", "Fire",
-                                                        "Fire", "Wind", "Earth", "Water"}));
-    private ArrayList<String> dropDownMenuOptions =
-            new ArrayList<>(Arrays.asList(new String[]{"Red", "Green", "Blue", "Yellow",
-                                                        "Yellow", "Blue", "Green", "Red"}));
-    private ArrayList<String> buttonsCompomentToCheck =
-            new ArrayList<>(Arrays.asList(new String[]{"Default Button", "Button",
-                                                        "Default Button", "Button" }));
-
     @BeforeClass
     public void checkLoginAndPrepareDiffElemPage() {
 
