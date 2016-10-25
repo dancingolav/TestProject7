@@ -168,7 +168,7 @@ public class DifferenElementsTests {
         System.out.println("BUTTONS TEST");
 
 
-        assertTrue(differentElements.hasButtonS());
+        if (!differentElements.hasButtonS()) assertTrue(false);
         buttonComponent = differentElements.getButtonComponent();
 
         for (String buttonValue :buttonsCompomentToCheck) {
@@ -177,7 +177,7 @@ public class DifferenElementsTests {
              assertTrue(differentElements.lastLogRecordContains(buttonValue, "button clicked"));
 
         }
-        assertTrue(true);
+        assertTrue(false);
     }
 
 }
