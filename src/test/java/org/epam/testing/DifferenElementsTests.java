@@ -5,6 +5,7 @@ import org.epam.testing.pageobjects.components.ButtonComponent;
 import org.epam.testing.pageobjects.components.CheckBoxButtons;
 import org.epam.testing.pageobjects.components.DropDownMenu;
 import org.epam.testing.pageobjects.components.RadioButtons;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -165,16 +166,15 @@ public class DifferenElementsTests {
     public void tryButtons() {
 
         System.out.println("BUTTONS TEST");
-        if (!differentElements.hasButtonS()) {
-            assertTrue(false);
-        } else {
-            buttonComponent = differentElements.getButtonComponent();
-        }
+
+
+        assertTrue(differentElements.hasButtonS());
+        buttonComponent = differentElements.getButtonComponent();
+
         for (String buttonValue :buttonsCompomentToCheck) {
              buttonComponent.clickButtonFromComponent(buttonValue);
             //Click button and check log. It is our test.
-             if (!differentElements.lastLogRecordContains(buttonValue, "button clicked"))
-                assertTrue(false);
+             assertTrue(differentElements.lastLogRecordContains(buttonValue, "button clicked"));
 
         }
         assertTrue(true);
