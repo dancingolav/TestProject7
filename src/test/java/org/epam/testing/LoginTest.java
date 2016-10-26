@@ -84,19 +84,6 @@ public class LoginTest {
                 break;
             case "chrome":
                 System.setProperty(sysProperty[3], pathToDriver);
-                /*DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-                ChromeOptions options = new ChromeOptions();
-                options.addArguments("test-type");
-                options.addArguments("--start-maximized");
-                options.addArguments("--disable-web-security");
-                options.addArguments("--allow-running-insecure-content");
-
-                //capabilities.setCapability("chrome.binary",pathToDriver);
-                options.addArguments("user-data-dir=D:\\PersonalDrivers\\");
-                capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-                myPersonalDriver = new ChromeDriver(capabilities);*/
-                myPersonalDriver = new ChromeDriver();
-
                 break;
         }
 
