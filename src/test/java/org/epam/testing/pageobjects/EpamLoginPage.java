@@ -52,14 +52,14 @@ public class EpamLoginPage {
 
     public void open() {
 
-    driverHere.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+    driverHere.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
     driverHere.get(epamLoginPageUrl);
     driverHere.manage().window().maximize();
 }
 
     public void open(String strUrl) {
 
-        driverHere.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        driverHere.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         driverHere.get(strUrl);
         driverHere.manage().window().maximize();
     }

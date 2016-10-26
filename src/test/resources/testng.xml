@@ -7,7 +7,7 @@
     <parameter name="browser"  value="opera"/>
     <parameter name="pathToDriver"  value="D:\\PersonalDrivers\\operadriver.exe"/>
     <parameter name="loginPageUrl"  value="https://jdi-framework.github.io/tests/"/>
-    <test name="LoginTest">
+
         <!--"browser", "pathToDriver" Use one of parameters' set ro run
         test with browser of your choice. Don't forgot to make change to proper driver's directory!
              ===============================================================================
@@ -29,7 +29,7 @@
 
         -->
 
-
+    <test name="LoginTest">
         <classes>
             <class name= "org.epam.testing.LoginTest" />
         </classes>
@@ -43,15 +43,4 @@
     </test>
 
 </suite>
-
-
-    <!-- You can run one more test or the same test with different browser
-    <test name="TryingEpamSiteSecondTest2">
-        <parameter name="browser"  value="opera"/>
-        <parameter name="pathToDriver"  value="D:\PersonalDrivers\operaserver.exe"/>
-        <classes>
-            <class name="org.epamqa.training.test.TryingEpamSiteTest2" />
-        </classes>
-    </test>
-    -->
 
