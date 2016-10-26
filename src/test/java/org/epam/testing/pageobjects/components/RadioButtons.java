@@ -26,7 +26,7 @@ public class RadioButtons {
         this.elementS = driverHere.findElements(radioElementSPath);
     }
 
-    public void clickRadioButton(final String buttonName) {
+    public void clickRadioButton( String buttonName) {
         //It works. Looking for radio button by xpass and check(click) it
         driverHere.findElement(formRadioButtonByXPass ( buttonName, partOfRadioButtonXPath)).click();
 
@@ -42,7 +42,7 @@ public class RadioButtons {
     }
 
 
-    public boolean isSelectedCorrectRadioButton(final String buttonName) {
+    public boolean isSelectedCorrectRadioButton( String buttonName) {
 
         for (WebElement e: elementS) {
             if (e.isSelected() && e.equals(driverHere.findElement(formRadioButtonByXPass ( buttonName, partOfRadioButtonXPath))))

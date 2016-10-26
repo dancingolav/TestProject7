@@ -70,7 +70,7 @@ public class EpamLoginPage {
         driverHere.close();
     }
 
-public void login(final String accountName, final String accountPwd) {
+public void login( String accountName, String accountPwd) {
 
     driverHere.findElement(inputAccountName).click();
     driverHere.findElement(inputAccountName).clear();

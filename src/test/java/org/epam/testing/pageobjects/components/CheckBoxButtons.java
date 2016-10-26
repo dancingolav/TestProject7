@@ -26,13 +26,13 @@ public class CheckBoxButtons {
         this.elementS = driverHere.findElements(checkBoxElementSPath);
     }
 
-    public void clickCheckBoxButton(final String buttonName) {
+    public void clickCheckBoxButton(String buttonName) {
         //It works. Looking for checkbox button by xpass
         driverHere.findElement(formCheckButtonByXPass ( buttonName, partOfCheckButtonXPath)).click();
 
     }
 
-    public boolean isSelectedCheckBoxButton(final String buttonName) {
+    public boolean isSelectedCheckBoxButton(String buttonName) {
 
         if (driverHere.findElement(formCheckButtonByXPass ( buttonName, partOfCheckButtonXPath)).isSelected()) {
                 return true;
@@ -49,7 +49,7 @@ public class CheckBoxButtons {
     }
 
     //Looking for checkbox button we need, using its label's text
-    public By formCheckButtonByXPass (final String buttonName, final String partOfCheckButtonXPath){
+    public By formCheckButtonByXPass ( String buttonName, String partOfCheckButtonXPath){
 
         return By.xpath(partOfCheckButtonXPath+"'"+buttonName+"'"+")]/input[@type ='checkbox']");
     }

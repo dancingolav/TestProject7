@@ -26,11 +26,11 @@ public class EpamDifferentElementsPage {
     private By logRecord = By.xpath("//div[@class='info-panel-section']/ul[@class='panel-body-list logs']/li");
 
     //Two constructors
-    public EpamDifferentElementsPage(final WebDriver driver) {
+    public EpamDifferentElementsPage( WebDriver driver) {
         driverHere = driver;
     };
 
-    public EpamDifferentElementsPage(final WebDriver driver, final String pageUrl) {
+    public EpamDifferentElementsPage(WebDriver driver,  String pageUrl) {
            driverHere = driver;
            epamDiffElementsPageUrl = pageUrl;
     };
