@@ -8,8 +8,19 @@
     <artifactId>MyTestProject3</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+
+    <properties>
+        <allure.version>1.5.0.RC2</allure.version>
+        <aspectj.version>1.8.9</aspectj.version>
+    </properties>
+
+
+
+
+
     <!-- https://mvnrepository.com/artifact/org.testng/testng -->
     <dependencies>
+
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -36,37 +47,35 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>ru.yandex.qatools.allure</groupId>
+            <artifactId>allure-testng-adaptor</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/ru.yandex.qatools.allure/allure-maven-plugin -->
+        <dependency>
+            <groupId>ru.yandex.qatools.allure</groupId>
+            <artifactId>allure-maven-plugin</artifactId>
+            <version>2.5</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.2</version>
+        </dependency>
+
 
     </dependencies>
-
-    <!--By default, the Surefire Plugin will automatically include all test classes
-    with the following wildcard patterns:
-
-    "**/Test*.java" - includes all of its subdirectories and all Java filenames
-    that start with "Test".
-    "**/*Test.java" - includes all of its subdirectories and all Java filenames
-    that end with "Test".
-    "**/*TestCase.java" - includes all of its subdirectories and all Java filenames
-    that end with "TestCase".
-
-    If the test classes do not follow any of these naming conventions, then configure
-    Surefire Plugin and specify the tests you want to include.
-    (c)
-    -->
-
-    <!--
-:)
-    I mean that we don't so need testng.xml for our single test if we follow the mentioned above
-    naming convetion. But for our home work...
-    -->
-
 
     <build>
     <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
-            <version>2.3.2</version>
+            <version>3.5.1</version>
             <configuration>
                 <source>1.8</source>
                 <target>1.8</target>
@@ -76,14 +85,60 @@
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.10</version>
+            <version>2.19.1</version>
+
+
+             <configuration>
+                       <suiteXmlFiles>
+                          <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                       </suiteXmlFiles>
+
+
+
+
+            <testFailureIgnore>true</testFailureIgnore>
+            <argLine>
+                -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
+            </argLine>
+            </configuration>
+            <dependencies>
+                <dependency>
+                    <groupId>org.aspectj</groupId>
+                    <artifactId>aspectjweaver</artifactId>
+                    <version>${aspectj.version}</version>
+                </dependency>
+            </dependencies>
+
+        </plugin>
+        <plugin>
+            <groupId>ru.yandex.qatools.allure</groupId>
+            <artifactId>allure-maven-plugin</artifactId>
+            <version>2.5</version>
             <configuration>
-                <suiteXmlFiles>
-                   <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
-                </suiteXmlFiles>
+                <resultsDirectory>allure-results</resultsDirectory>
             </configuration>
         </plugin>
+
+
+
+
     </plugins>
+
     </build>
 
+    <reporting>
+        <excludeDefaults>true</excludeDefaults>
+        <plugins>
+            <plugin>
+                <groupId>ru.yandex.qatools.allure</groupId>
+                <artifactId>allure-maven-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <reportDirectory>allure-report</reportDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+
 </project>
+

@@ -11,6 +11,7 @@ import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.*;
+import ru.yandex.qatools.allure.annotations.Step;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -21,6 +22,9 @@ import static org.testng.Assert.assertTrue;
 /**
  * Created by AlexSh on 18.10.2016.
  */
+
+
+
 public class LoginTest {
 
     //it is static & public. It is for all. Love it or leave it.
@@ -90,12 +94,16 @@ public class LoginTest {
 
         System.out.println(browser + " " + pathToDriver);
 
+
         //At a "very beginning" we open fist page. This is really door to eternity
+
         epamLoginPage = new EpamLoginPage(myPersonalDriver);
+
+
         epamLoginPage.open();
 
     }
-
+    @Step("LOGIN")
     @Test(dataProviderClass=LoginData.class, dataProvider="dataforlogin")
     public void tryLogin(boolean testType, String accountName, String accountPwd) {
         System.out.println("logging into the account");

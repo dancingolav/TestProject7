@@ -21,6 +21,7 @@ public class LoginData {
                    { false, "epam", "12345" },
                    { true, "epam", "1234"},
                    { false, "sldkfjsdlkfjds", "ds;fksd;kfsd;lkf"},
+                   { true, "epam", "1234"},
                    { true, "epam", "1234"}
 
            };

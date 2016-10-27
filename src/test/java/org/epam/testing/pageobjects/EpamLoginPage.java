@@ -2,6 +2,7 @@ package org.epam.testing.pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.concurrent.TimeUnit;
 
@@ -52,14 +53,14 @@ public class EpamLoginPage {
 
     public void open() {
 
-    driverHere.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+    driverHere.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
     driverHere.get(epamLoginPageUrl);
     driverHere.manage().window().maximize();
 }
 
     public void open(String strUrl) {
 
-        driverHere.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+        driverHere.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         driverHere.get(strUrl);
         driverHere.manage().window().maximize();
     }
@@ -69,6 +70,7 @@ public class EpamLoginPage {
     public void close () {
         driverHere.close();
     }
+
 
 public void login( String accountName, String accountPwd) {
 

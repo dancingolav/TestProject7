@@ -14,7 +14,8 @@ public class ButtonsData {
        public static Object [][] createDataForButtons() {
            return new Object[][] {
                    {"Default Button"}, {"Button"},
-                   { "Default Button"},{"Button"}
+                   { "Default Button"},{"Button"},
+                   {"ButtonS"}
 
            };
        }

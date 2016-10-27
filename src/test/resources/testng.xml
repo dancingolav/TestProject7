@@ -28,6 +28,9 @@
              <parameter name="pathToDriver"  value="D:\PersonalDrivers\operadriver.exe"/>
 
         -->
+    <listeners>
+        <listener class-name="org.epam.testing.pageobjects.FailureListener"/>
+    </listeners>
 
     <test name="LoginTest">
         <classes>

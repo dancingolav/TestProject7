@@ -1,14 +1,20 @@
 package org.epam.testing;
 
 import org.epam.testing.pageobjects.EpamDifferentElementsPage;
+import org.epam.testing.pageobjects.FailureListener;
 import org.epam.testing.pageobjects.components.ButtonComponent;
 import org.epam.testing.pageobjects.components.CheckBoxButtons;
 import org.epam.testing.pageobjects.components.DropDownMenu;
 import org.epam.testing.pageobjects.components.RadioButtons;
 import org.epam.testing.testdata.*;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Attachment;
+import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,6 +26,7 @@ import static org.testng.AssertJUnit.assertTrue;
 /**
  * Created by AlexSh on 19.10.2016.
  */
+@Listeners({ FailureListener.class })
 public class DifferenElementsTests {
 
     private EpamDifferentElementsPage differentElements;
@@ -48,7 +55,7 @@ public class DifferenElementsTests {
         differentElements.open();
     }
 
-
+    @Step("TESTING RADIO BUTTONS")
     @Test (dataProviderClass=RadioButtonsData.class, dataProvider="radiobuttons")
     public void tryRadioButtons(String radioButtonName) {
 
@@ -64,7 +71,7 @@ public class DifferenElementsTests {
         assertTrue(differentElements.lastLogRecordContains(radioButtonName));
      }
 
-
+    @Step("TESTING CHECKBOX BUTTONS")
     @Test (dataProviderClass=CheckBoxButtonsData.class, dataProvider="checkboxbuttons")
     public void tryCheckBoxButtons(String checkBoxButtonName ) {
 
@@ -90,7 +97,7 @@ public class DifferenElementsTests {
 
          assertTrue(differentElements.lastLogRecordContains(checkBoxButtonName, isSelectedTrueOrFalse));
     }
-
+    @Step("TESTING DROPDOWN MENU")
     @Test (dataProviderClass=DropDownMenuOptionsData.class, dataProvider="dropdownmenuoptions")
     public void tryDropDownMenu(String dropDownOption) {
 
@@ -115,7 +122,7 @@ public class DifferenElementsTests {
 
 
     }
-
+    @Step ("Button \"{0}\"")
     @Test (dataProviderClass=ButtonsData.class, dataProvider="buttonsvalues")
     public void tryButtons(String buttonValue) {
 
@@ -129,5 +136,6 @@ public class DifferenElementsTests {
         assertTrue(differentElements.lastLogRecordContains(buttonValue, "button clicked"));
 
       }
+
 
 }
