@@ -1,0 +1,47 @@
+{
+  "uid" : "52d204301f87907f",
+  "name" : "tryRadioButtons[Bronze]",
+  "title" : "Try radio buttons [Bronze]",
+  "time" : {
+    "start" : 1477537153314,
+    "stop" : 1477537153612,
+    "duration" : 298
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "8065299c9a456e31",
+    "name" : "TestAll : DifferentElementsPage",
+    "title" : "TestAll : DifferentElementsPage"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "AlexSh-ПК"
+  }, {
+    "name" : "thread",
+    "value" : "788@AlexSh-ПК.main(1)"
+  }, {
+    "name" : "suite-name",
+    "value" : "TestAll : DifferentElementsPage"
+  }, {
+    "name" : "suite-title",
+    "value" : "TestAll : DifferentElementsPage"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  } ],
+  "parameters" : [ ]
+}

@@ -2,23 +2,13 @@ package org.epam.testing;
 
 import org.epam.testing.pageobjects.EpamDifferentElementsPage;
 import org.epam.testing.pageobjects.FailureListener;
-import org.epam.testing.pageobjects.components.ButtonComponent;
 import org.epam.testing.pageobjects.components.CheckBoxButtons;
 import org.epam.testing.pageobjects.components.DropDownMenu;
-import org.epam.testing.pageobjects.components.RadioButtons;
 import org.epam.testing.testdata.*;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import ru.yandex.qatools.allure.annotations.Attachment;
 import ru.yandex.qatools.allure.annotations.Step;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import static org.epam.testing.LoginTest.epamLoginPage;
 import static org.epam.testing.LoginTest.myPersonalDriver;
 import static org.testng.AssertJUnit.assertTrue;

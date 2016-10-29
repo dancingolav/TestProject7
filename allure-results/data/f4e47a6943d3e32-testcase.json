@@ -1,0 +1,47 @@
+{
+  "uid" : "f4e47a6943d3e32",
+  "name" : "tryLogin[false,sldkfjsdlkfjds,ds;fksd;kfsd;lkf]",
+  "title" : "Try login [false,sldkfjsdlkfjds,ds;fksd;kfsd;lkf]",
+  "time" : {
+    "start" : 1477542263953,
+    "stop" : 1477542264841,
+    "duration" : 888
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "620f420c3ed25e91",
+    "name" : "TestAll : LoginTest",
+    "title" : "TestAll : LoginTest"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "AlexSh-ПК"
+  }, {
+    "name" : "thread",
+    "value" : "4872@AlexSh-ПК.main(1)"
+  }, {
+    "name" : "suite-name",
+    "value" : "TestAll : LoginTest"
+  }, {
+    "name" : "suite-title",
+    "value" : "TestAll : LoginTest"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  } ],
+  "parameters" : [ ]
+}

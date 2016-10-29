@@ -53,7 +53,7 @@ public class EpamLoginPage {
 
     public void open() {
 
-    driverHere.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+    driverHere.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     driverHere.get(epamLoginPageUrl);
     driverHere.manage().window().maximize();
 }

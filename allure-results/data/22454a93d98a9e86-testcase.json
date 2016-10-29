@@ -1,0 +1,47 @@
+{
+  "uid" : "22454a93d98a9e86",
+  "name" : "tryButtons[Button]",
+  "title" : "Try buttons [Button]",
+  "time" : {
+    "start" : 1477537146905,
+    "stop" : 1477537147284,
+    "duration" : 379
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "106930e372d3bc43",
+    "name" : "TestAll : DifferentElementsPage",
+    "title" : "TestAll : DifferentElementsPage"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "AlexSh-ПК"
+  }, {
+    "name" : "thread",
+    "value" : "788@AlexSh-ПК.main(1)"
+  }, {
+    "name" : "suite-name",
+    "value" : "TestAll : DifferentElementsPage"
+  }, {
+    "name" : "suite-title",
+    "value" : "TestAll : DifferentElementsPage"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  } ],
+  "parameters" : [ ]
+}

@@ -1,0 +1,47 @@
+{
+  "uid" : "df8afa37d10fbeb5",
+  "name" : "tryDropDownMenu[Yellow]",
+  "title" : "Try drop down menu [Yellow]",
+  "time" : {
+    "start" : 1477539880075,
+    "stop" : 1477539880297,
+    "duration" : 222
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "8065299c9a456e31",
+    "name" : "TestAll : DifferentElementsPage",
+    "title" : "TestAll : DifferentElementsPage"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "AlexSh-ПК"
+  }, {
+    "name" : "thread",
+    "value" : "1252@AlexSh-ПК.main(1)"
+  }, {
+    "name" : "suite-name",
+    "value" : "TestAll : DifferentElementsPage"
+  }, {
+    "name" : "suite-title",
+    "value" : "TestAll : DifferentElementsPage"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  } ],
+  "parameters" : [ ]
+}

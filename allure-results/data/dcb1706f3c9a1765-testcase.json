@@ -1,0 +1,47 @@
+{
+  "uid" : "dcb1706f3c9a1765",
+  "name" : "tryLogin[false,epam,]",
+  "title" : "Try login [false,epam,]",
+  "time" : {
+    "start" : 1477538543756,
+    "stop" : 1477538544707,
+    "duration" : 951
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "1c5f17dbc17c0d8b",
+    "name" : "TestAll : LoginTest",
+    "title" : "TestAll : LoginTest"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "AlexSh-ПК"
+  }, {
+    "name" : "thread",
+    "value" : "4472@AlexSh-ПК.main(1)"
+  }, {
+    "name" : "suite-name",
+    "value" : "TestAll : LoginTest"
+  }, {
+    "name" : "suite-title",
+    "value" : "TestAll : LoginTest"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  } ],
+  "parameters" : [ ]
+}

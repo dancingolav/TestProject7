@@ -41,7 +41,7 @@ public class LoginTest {
     @BeforeSuite
     @Parameters({"browser", "pathToDriver","loginPageUrl"})
     public void beforeSuite(@Optional("opera") String browser,
-                            @Optional("D:\\PersonalDrivers\\operadriver.exe") String pathToDriver,
+                            @Optional("D:/PersonalDrivers/operadriver.exe") String pathToDriver,
                             @Optional("https://jdi-framework.github.io/tests/") String loginPageUrl) {
 
 
@@ -88,6 +88,7 @@ public class LoginTest {
                 break;
             case "chrome":
                 System.setProperty(sysProperty[3], pathToDriver);
+                myPersonalDriver = new ChromeDriver();
                 break;
         }
 

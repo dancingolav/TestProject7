@@ -1,0 +1,47 @@
+{
+  "uid" : "242e5e48a08a85a3",
+  "name" : "tryLogin[false,epam,12345]",
+  "title" : "Try login [false,epam,12345]",
+  "time" : {
+    "start" : 1477536731165,
+    "stop" : 1477536733112,
+    "duration" : 1947
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "f6d75524922b992f",
+    "name" : "org.epam.testing.LoginTest : Command line test",
+    "title" : "org.epam.testing.LoginTest : Command line test"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "AlexSh-ПК"
+  }, {
+    "name" : "thread",
+    "value" : "4912@AlexSh-ПК.main(1)"
+  }, {
+    "name" : "suite-name",
+    "value" : "org.epam.testing.LoginTest : Command line test"
+  }, {
+    "name" : "suite-title",
+    "value" : "org.epam.testing.LoginTest : Command line test"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  } ],
+  "parameters" : [ ]
+}

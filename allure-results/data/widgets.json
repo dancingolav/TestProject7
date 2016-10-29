@@ -1,0 +1,92 @@
+{
+  "hash" : "e7105c43ada45c9f6e0006854ef1a1d95249231d",
+  "plugins" : {
+    "total" : {
+      "statistic" : {
+        "total" : 529,
+        "passed" : 528,
+        "pending" : 0,
+        "canceled" : 0,
+        "failed" : 0,
+        "broken" : 1
+      },
+      "time" : {
+        "start" : 1477536720028,
+        "stop" : 1477542277465,
+        "duration" : 5557437
+      }
+    },
+    "defects" : {
+      "totalCount" : 1,
+      "items" : [ {
+        "count" : 1,
+        "uid" : "fae2c24eeeba215",
+        "message" : "InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression //input[@id='Login'] because of the following error:\nTypeError: Failed to execute 'createNSResolver' on 'Document': parameter 1 is not of type 'Node'.\n  (Session info: Opera with embedded Chromium 53.0.2785.143)\n  (Driver info: OperaDriver=0.2.0 (ba47709ed9e35ce26dbd960fb5d75be104290d96),platform=Windows NT 6.1 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 932 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html\nBuild info: version: '3.0.0-beta4', revision: '3169782', time: '2016-09-29 10:30:04 -0700'\nSystem info: host: 'AlexSh-ПК', ip: '192.168.100.5', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_102'\nDriver info: org.openqa.selenium.opera.OperaDriver\nCapabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\\Users\\AlexSh\\AppData\\Local\\Temp\\scoped_dir3664_9066}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, version=53.0.2785.143, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]\nSession ID: bb6c94ba012b7195c23165860f43bc47\n*** Element info: {Using=xpath, value=//input[@id='Login']}",
+        "status" : "BROKEN"
+      } ]
+    },
+    "xunit" : {
+      "totalCount" : 4,
+      "items" : [ {
+        "uid" : "97e13f4758c38974",
+        "title" : "Default Suite : TestProject3",
+        "statistic" : {
+          "total" : 40,
+          "passed" : 39,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 0,
+          "broken" : 1
+        }
+      }, {
+        "uid" : "106930e372d3bc43",
+        "title" : "TestAll : DifferentElementsPage",
+        "statistic" : {
+          "total" : 372,
+          "passed" : 372,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 0,
+          "broken" : 0
+        }
+      }, {
+        "uid" : "620f420c3ed25e91",
+        "title" : "TestAll : LoginTest",
+        "statistic" : {
+          "total" : 108,
+          "passed" : 108,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 0,
+          "broken" : 0
+        }
+      }, {
+        "uid" : "e2e731336911feff",
+        "title" : "org.epam.testing.LoginTest : Command line test",
+        "statistic" : {
+          "total" : 9,
+          "passed" : 9,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 0,
+          "broken" : 0
+        }
+      } ]
+    },
+    "behaviors" : {
+      "totalCount" : 1,
+      "items" : [ {
+        "title" : "Without feature",
+        "statistic" : {
+          "total" : 529,
+          "passed" : 528,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 0,
+          "broken" : 1
+        }
+      } ]
+    },
+    "environment" : [ ]
+  }
+}

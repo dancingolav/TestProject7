@@ -4,8 +4,8 @@
 
 
 <suite name="TestAll">
-    <parameter name="browser"  value="opera"/>
-    <parameter name="pathToDriver"  value="D:\\PersonalDrivers\\operadriver.exe"/>
+    <parameter name="browser"  value="chrome"/>
+    <parameter name="pathToDriver"  value="D:\\PersonalDrivers\\chromedriver.exe"/>
     <parameter name="loginPageUrl"  value="https://jdi-framework.github.io/tests/"/>
 
         <!--"browser", "pathToDriver" Use one of parameters' set ro run
