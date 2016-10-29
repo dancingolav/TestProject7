@@ -1,9 +1,9 @@
 package org.epam.testing;
 
 import org.epam.testing.pageobjects.EpamDifferentElementsPage;
-import org.epam.testing.pageobjects.FailureListener;
-import org.epam.testing.pageobjects.components.CheckBoxButtons;
-import org.epam.testing.pageobjects.components.DropDownMenu;
+import org.epam.testing.components.FailureListener;
+import org.epam.testing.components.CheckBoxButtons;
+import org.epam.testing.components.DropDownMenu;
 import org.epam.testing.testdata.*;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
@@ -119,7 +119,7 @@ public class DifferenElementsTests {
         System.out.println("BUTTONS TEST");
 
         //First part of test. Do we have smth to test on the page?
-        if (!differentElements.hasButtonS()) assertTrue(false);
+        if (!differentElements.hasButton(buttonValue)) assertTrue(false);
 
         differentElements.getButtonComponent().clickButtonFromComponent(buttonValue);
         //Click button and check log. It is our test.

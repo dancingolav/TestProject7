@@ -1,14 +1,13 @@
 package org.epam.testing;
 
 import org.epam.testing.pageobjects.EpamLoginPage;
+import org.epam.testing.components.FailureListener;
 import org.epam.testing.testdata.LoginData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import ru.yandex.qatools.allure.annotations.Step;
@@ -24,7 +23,7 @@ import static org.testng.Assert.assertTrue;
  */
 
 
-
+@Listeners({ FailureListener.class })
 public class LoginTest {
 
     //it is static & public. It is for all. Love it or leave it.

@@ -2,7 +2,6 @@
 
 
 
-
 <suite name="TestAll">
     <parameter name="browser"  value="chrome"/>
     <parameter name="pathToDriver"  value="D:\\PersonalDrivers\\chromedriver.exe"/>
@@ -29,8 +28,9 @@
 
         -->
     <listeners>
-        <listener class-name="org.epam.testing.pageobjects.FailureListener"/>
+        <listener class-name="org.epam.testing.components.FailureListener"/>
     </listeners>
+
 
     <test name="LoginTest">
         <classes>

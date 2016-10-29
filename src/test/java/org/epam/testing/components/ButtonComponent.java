@@ -1,4 +1,4 @@
-package org.epam.testing.pageobjects.components;
+package org.epam.testing.components;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -62,8 +62,9 @@ public class ButtonComponent {
       return elementS;
   }
 
-  public boolean hasButtonS () {
-      return elementS.size()!= 0;
+  public boolean hasButton (String valueString) {
+
+      return elementS.size()!= 0 && getButtoN(valueString)!=null ;
   }
 
 }

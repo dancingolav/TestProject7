@@ -1,13 +1,12 @@
 package org.epam.testing.pageobjects;
 
-import org.epam.testing.pageobjects.components.ButtonComponent;
-import org.epam.testing.pageobjects.components.CheckBoxButtons;
-import org.epam.testing.pageobjects.components.DropDownMenu;
-import org.epam.testing.pageobjects.components.RadioButtons;
+import org.epam.testing.components.ButtonComponent;
+import org.epam.testing.components.CheckBoxButtons;
+import org.epam.testing.components.DropDownMenu;
+import org.epam.testing.components.RadioButtons;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -79,8 +78,8 @@ public boolean hasRadioButtons() {
 
 //the page must contain buttons to test
 //it is first part of our test
-    public boolean hasButtonS() {
-        return new ButtonComponent(driverHere).hasButtonS();
+    public boolean hasButton(String valueString) {
+        return new ButtonComponent(driverHere).hasButton(valueString);
     }
 
     public List<WebElement> getButtonS () {

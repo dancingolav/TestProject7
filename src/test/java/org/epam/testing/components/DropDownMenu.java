@@ -1,4 +1,4 @@
-package org.epam.testing.pageobjects.components;
+package org.epam.testing.components;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
