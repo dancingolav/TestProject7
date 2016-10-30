@@ -146,7 +146,7 @@
                 <version>2.5</version>
                 <configuration>
                     <reportDirectory>allure-report</reportDirectory>
-                </configuration>-->
+                </configuration>
             </plugin>
         </plugins>
     </reporting>
