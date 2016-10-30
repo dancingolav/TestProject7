@@ -3,6 +3,12 @@
 
 
 <suite name="TestAll">
+
+    <listeners>
+        <listener class-name="org.epam.testing.components.FailureListener"/>
+    </listeners>
+
+
     <parameter name="browser"  value="chrome"/>
     <parameter name="pathToDriver"  value="D:\\PersonalDrivers\\chromedriver.exe"/>
     <parameter name="loginPageUrl"  value="https://jdi-framework.github.io/tests/"/>
@@ -27,9 +33,7 @@
              <parameter name="pathToDriver"  value="D:\PersonalDrivers\operadriver.exe"/>
 
         -->
-    <listeners>
-        <listener class-name="org.epam.testing.components.FailureListener"/>
-    </listeners>
+
 
 
     <test name="LoginTest">
@@ -37,6 +41,7 @@
             <class name= "org.epam.testing.LoginTest" />
         </classes>
     </test>
+
 
 
     <test name="DifferentElementsPage">

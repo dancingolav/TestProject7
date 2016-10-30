@@ -51,7 +51,7 @@ public class ButtonComponent {
       WebElement button = getButtoN(valueString);
       if (button != null)  {
            button.click();
-           System.out.println("I've just clicked "+ valueString+". How happy I am!");
+           System.out.println("I've just clicked "+ valueString);
       }
       else
           System.out.println("I can not find "+ valueString+". Nothing to click!");
