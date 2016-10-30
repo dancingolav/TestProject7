@@ -9,30 +9,34 @@
     </listeners>
 
 
-    <parameter name="browser"  value="chrome"/>
+    <!--<parameter name="browser"  value="chrome"/>
     <parameter name="pathToDriver"  value="D:\\PersonalDrivers\\chromedriver.exe"/>
-    <parameter name="loginPageUrl"  value="https://jdi-framework.github.io/tests/"/>
+    <parameter name="loginPageUrl"  value="https://jdi-framework.github.io/tests/"/>-->
 
         <!--"browser", "pathToDriver" Use one of parameters' set ro run
         test with browser of your choice. Don't forgot to make change to proper driver's directory!
              ===============================================================================
             "firefox", "D:\\PersonalDrivers\\geckodriver.exe"
             <parameter name="browser"  value="firefox"/>
-            <parameter name="pathToDriver"  value="D:\PersonalDrivers\geckodriver.exe"/>
+            <parameter name="pathToDriver"  value="D:\\PersonalDrivers\\geckodriver.exe"/>
              ================================================================================
             "chrome", "D:\\PersonalDrivers\\chromedriver.exe"
             <parameter name="browser"  value="chrome"/>
-            <parameter name="pathToDriver"  value="D:\PersonalDrivers\chromedriver.exe"/>
+            <parameter name="pathToDriver"  value="D:\\PersonalDrivers\\chromedriver.exe"/>
              ================================================================================
              "ie", "D:\\PersonalDrivers\\IEDriverServer.exe"
              <parameter name="browser"  value="ie"/>
-             <parameter name="pathToDriver"  value="D:\PersonalDrivers\IEDriverServer.exe"/>
+             <parameter name="pathToDriver"  value="D:\\PersonalDrivers\\IEDriverServer.exe"/>
              =================================================================================
             "opera","D:\\PersonalDrivers\\operadriver.exe"
              <parameter name="browser"  value="opera"/>
-             <parameter name="pathToDriver"  value="D:\PersonalDrivers\operadriver.exe"/>
+             <parameter name="pathToDriver"  value="D:\\PersonalDrivers\\operadriver.exe"/>
+              =================================================================================-->
 
-        -->
+             <parameter name="browser"  value="phantom"/>
+             <parameter name="pathToDriver"  value="D:\\PersonalDrivers\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe"/>
+
+
 
 
 

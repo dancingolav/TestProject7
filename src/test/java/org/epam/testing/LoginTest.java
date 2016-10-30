@@ -3,11 +3,14 @@ package org.epam.testing;
 import org.epam.testing.pageobjects.EpamLoginPage;
 import org.epam.testing.components.FailureListener;
 import org.epam.testing.testdata.LoginData;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import ru.yandex.qatools.allure.annotations.Step;
@@ -39,20 +42,21 @@ public class LoginTest {
 
     @BeforeSuite
     @Parameters({"browser", "pathToDriver","loginPageUrl"})
-    public void beforeSuite(@Optional("opera") String browser,
-                            @Optional("D:/PersonalDrivers/operadriver.exe") String pathToDriver,
+    public void beforeSuite(@Optional("phantom") String browser,
+                            @Optional("D:/PersonalDrivers/phantomjs-2.1.1-windows/bin/phantomjs.exe") String pathToDriver,
                             @Optional("https://jdi-framework.github.io/tests/") String loginPageUrl) {
 
 
 
-        ArrayList<String> browsersHerd = new ArrayList<String>(Arrays.asList(new String[]{"firefox", "chrome", "ie", "opera"}));
+        ArrayList<String> browsersHerd = new ArrayList<String>(Arrays.asList(new String[]{"firefox", "chrome", "ie", "opera","phantom"}));
 
         //System's properties we have to set to use drivers
         String[] sysProperty = new String[]{
                 "webdriver.gecko.driver",
                 "webdriver.opera.driver",
                 "webdriver.ie.driver",
-                "webdriver.chrome.driver"
+                "webdriver.chrome.driver",
+                "phantomjs.binary.path"
         };
         //Checking whether file is exist
         File f = new File(pathToDriver);
@@ -89,7 +93,26 @@ public class LoginTest {
                 System.setProperty(sysProperty[3], pathToDriver);
                 myPersonalDriver = new ChromeDriver();
                 break;
+            case "phantom":
+                System.setProperty(sysProperty[4], pathToDriver);
+                Capabilities caps = new DesiredCapabilities().phantomjs();
+                ((DesiredCapabilities) caps).setJavascriptEnabled(true);
+                ((DesiredCapabilities) caps).setCapability("takesScreenshot", true);
+
+/*
+                Capabilities caps = new DesiredCapabilities();
+                ((DesiredCapabilities) caps).setJavascriptEnabled(true);
+                ((DesiredCapabilities) caps).setCapability("takesScreenshot", true);
+                ((DesiredCapabilities) caps).setCapability(
+                        PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
+                        "your custom path\\phantomjs.exe"
+                );
+                WebDriver   driver = new  PhantomJSDriver(caps);*/
+
+                myPersonalDriver = new  PhantomJSDriver(caps);
+
         }
+
 
 
         System.out.println(browser + " " + pathToDriver);
