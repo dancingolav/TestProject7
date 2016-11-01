@@ -1,23 +1,14 @@
 package org.epam.testing.components;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriverException;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
 import ru.yandex.qatools.allure.annotations.Attachment;
 import ru.yandex.qatools.allure.annotations.Step;
 
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import static java.lang.Thread.*;
-import static org.epam.testing.LoginTest.myPersonalDriver;
+import static org.epam.testing.LoginTestSteps.myPersonalDriver;
 
 /**
  * Created by AlexSh on 27.10.2016.

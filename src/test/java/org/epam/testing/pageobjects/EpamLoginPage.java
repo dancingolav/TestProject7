@@ -74,6 +74,16 @@ public class EpamLoginPage {
 
 public void login( String accountName, String accountPwd) {
 
+    //if login or logout menu is closed we will open it
+    if (!(isLoginOrLogoutMenuOpen())) {
+        openLoginOrLogoutMenu();
+    }
+    //if we've opened logout menu (look at the code above) we have to log out since we were in "logged in" state
+    //and have not input fields for our data to log in
+    if (isLogoutMenuOpen()) {
+        logout();
+    }
+
     driverHere.findElement(inputAccountName).click();
     driverHere.findElement(inputAccountName).clear();
     driverHere.findElement(inputAccountName).sendKeys(accountName);
