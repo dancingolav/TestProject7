@@ -72,7 +72,6 @@ public class LoginTestSteps {
    @Then("^I should be logged in if the credentials ([^\"]*) are correct and I shouldn't if they are not$")
 
        public void isUserLogin(String correctOrNot) {
-
        boolean testType = correctOrNot.trim().equals("true");
 
         if (! testType)
